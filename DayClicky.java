@@ -2,23 +2,15 @@ import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
-<<<<<<< HEAD
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JCheckBox;
 import javax.swing.SwingConstants;
-=======
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JRadioButton;
-import javax.swing.ButtonGroup;
->>>>>>> 92b7038991c13585432c5b657556317ed8e58ba7
 
 public class DayClicky extends JPanel implements ItemListener {
         private static final long serialVersionUID = 1L;
 
-<<<<<<< HEAD
         private double          dollarsEarnt;
         private JCheckBox    	am;
         private JCheckBox    	pm;
@@ -29,35 +21,21 @@ public class DayClicky extends JPanel implements ItemListener {
         private JCheckBox    	CSSAM;
         private JCheckBox    	CSSPM;
         private JCheckBox		PHOLS;
-=======
-        private double             dollarsEarnt;
-        private JRadioButton    no;
-        private JRadioButton    am;
-        private JRadioButton    pm;
-        private JRadioButton	ss;
-        private JRadioButton    nd;
->>>>>>> 92b7038991c13585432c5b657556317ed8e58ba7
         private JLabel          dayLabel;
         
         private double			amPay;
         private double			pmPay;
-<<<<<<< HEAD
         private double			ndPay;
         private double			RAO4Pay;
         private double			RAO6Pay;
         private double			RAO8Pay;
         private double			CSSAMPay;
         private double			CSSPMPay;
-=======
-        private double			ssPay;
-        private double			ndPay;
->>>>>>> 92b7038991c13585432c5b657556317ed8e58ba7
         
         public DayClicky() {
                 setLayout(new FlowLayout());
                 dayLabel = new JLabel("x");
                 dayLabel.setFont(new Font("DejaVu Sans Mono", Font.PLAIN, 18));
-<<<<<<< HEAD
                 
                 am = new JCheckBox("  AM  ");
                 am.addItemListener(this);
@@ -124,45 +102,11 @@ public class DayClicky extends JPanel implements ItemListener {
                 RAO8Pay = 184.50;
                 CSSAMPay = 87.92;
                 CSSPMPay = 98.91;
-=======
-                no = new JRadioButton("N/A", true);
-                no.addItemListener(this);
-                am = new JRadioButton("AM");
-                am.addItemListener(this);
-                pm = new JRadioButton("PM");
-                pm.addItemListener(this);
-                ss = new JRadioButton("SS");
-                ss.addItemListener(this);
-                nd = new JRadioButton("ND");
-                nd.addItemListener(this);
-                
-                dollarsEarnt = 0;
-                
-                ButtonGroup grp = new ButtonGroup();
-                grp.add(no);
-                grp.add(am);
-                grp.add(pm);
-                grp.add(ss);
-                grp.add(nd);
-                
-                add(dayLabel);
-                add(no);
-                add(am);
-                add(pm);
-                add(ss);
-                add(nd);
-                
-                amPay = 164.85;
-                pmPay = 173.04;
-                ssPay = 109.90;
-                ndPay = 202.16;
->>>>>>> 92b7038991c13585432c5b657556317ed8e58ba7
                 
         }
         
         public void itemStateChanged(ItemEvent e) {
                 Object button = e.getItemSelectable();
-<<<<<<< HEAD
 
                 if (button == am) {
                 	if (am.isSelected()) {
@@ -226,19 +170,6 @@ public class DayClicky extends JPanel implements ItemListener {
                 	} else {
                 		dollarsEarnt -= CSSPMPay;
                 	}	
-=======
-                
-                if (button == no) {
-                        dollarsEarnt = 0;
-                } else if (button == am) {
-                        dollarsEarnt = amPay;
-                } else if (button == pm) {
-                        dollarsEarnt = pmPay;
-                } else if (button == ss) {
-                		dollarsEarnt = ssPay;
-                } else if (button == nd) {
-                        dollarsEarnt = ndPay;
->>>>>>> 92b7038991c13585432c5b657556317ed8e58ba7
                 }
         }
         
@@ -247,12 +178,9 @@ public class DayClicky extends JPanel implements ItemListener {
         }
         
         public double GetDailyDollars() {
-<<<<<<< HEAD
         		if (PHOLS.isSelected()) {
         			return dollarsEarnt * 2;
         		}
-=======
->>>>>>> 92b7038991c13585432c5b657556317ed8e58ba7
                 return dollarsEarnt;
         }
         
@@ -262,7 +190,6 @@ public class DayClicky extends JPanel implements ItemListener {
         public void SetPMPay(double pay) {
         	pmPay = pay;
         }
-<<<<<<< HEAD
         
         public void SetNDPay(double pay) {
         	ndPay = pay;
@@ -299,12 +226,4 @@ public class DayClicky extends JPanel implements ItemListener {
              CSSPM.setSelected(false);
              PHOLS.setSelected(false);;
         }
-=======
-        public void SetSSPay(double pay) {
-        	ssPay = pay;
-        }
-        public void SetNDPay(double pay) {
-        	ndPay = pay;
-        }
->>>>>>> 92b7038991c13585432c5b657556317ed8e58ba7
 }
